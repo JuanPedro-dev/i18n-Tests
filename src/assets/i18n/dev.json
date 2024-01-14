@@ -1,0 +1,11 @@
+{
+    "navbar.menu.home": "Home",
+    "navbar.menu.languages": "Languages",
+    "navbar.menu.languages.Spanish": "Spanish",
+    "navbar.menu.languages.English": "English",
+    "navbar.menu.search.input": "Ex. User",
+    "navbar.menu.search.search": "Ex. User",
+    "main.page.hero.title": "Responsive left-aligned hero with image",
+    "main.page.hero.txt": "Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.",
+    "main.page.hero.btn": "Click me, I'm a button"
+}

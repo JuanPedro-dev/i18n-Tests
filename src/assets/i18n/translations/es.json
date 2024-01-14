@@ -1,0 +1,11 @@
+{
+    "navbar.menu.home": "Inicio",
+    "navbar.menu.languages": "Idiomas",
+    "navbar.menu.languages.Spanish": "Español",
+    "navbar.menu.languages.English": "Inglés",
+    "navbar.menu.search.input": "Ejemplo: usuario",
+    "navbar.menu.search.search": "Buscar",
+    "main.page.hero.title": "Héroe responsivo alineado a la izquierda con imagen",
+    "main.page.hero.txt": "Diseñe y personalice rápidamente sitios web con capacidad de respuesta y orientados primero a dispositivos móviles con Bootstrap, el conjunto de herramientas de código abierto para front-end más popular del mundo, que incluye variables y mixins de Sass, un sistema de cuadrícula con capacidad de respuesta, un gran número de componentes predefinidos y potentes plugins de JavaScript.",
+    "main.page.hero.btn": "Hazme clic, soy un botón"
+}
