@@ -1,4 +1,4 @@
-<nav class="navbar mb-6 bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
 
     <a class="navbar-brand" href="#">Logo</a>
@@ -10,26 +10,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">{{'navbar.menu.home' | transloco}}</a>
         </li>
 
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Lenguages
+            {{'navbar.menu.languages' | transloco}}
           </a>
           
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Spanish</a></li>
-            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><span class="dropdown-item" href="#" (click)="changeLanguage('en')">{{'navbar.menu.languages.English' | transloco}}</span></li>
+            <li><span class="dropdown-item" href="#" (click)="changeLanguage('es')">{{'navbar.menu.languages.Spanish' | transloco}}</span></li>
           </ul>
-        </li>
 
+        </li>
       </ul>
 
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-primary w-100" type="submit">Search</button>
+        <input class="form-control me-2" type="search" [placeholder]="'navbar.menu.search.input' | transloco" aria-label="Search">
+        <button class="btn btn-outline-primary w-100" type="submit">{{'navbar.menu.search.search' | transloco}}</button>
       </form>
 
     </div>

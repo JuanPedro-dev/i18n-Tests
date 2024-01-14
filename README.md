@@ -1,32 +1,74 @@
-# I18n POC
+# I18n POC - Transloco
 
-This project is to analyze different implementations of I18n. <br>
-I will create a branch for each test. <br>
-To speed up the process I will make use of libraries such as bootstrap.
+Oficial link [Transloco](https://ngneat.github.io/transloco/docs/getting-started/installation)
 
+## Steps:  
 
-## Extra Dependencies:  
-
-- Bootstrap: 
-
+1. Install dependency
 ```
-npm install bootstrap
-npm install @popperjs/core
+ng add @ngneat/transloco
 ```
-Agregar las rutas en angular.json: 
+🌍 Which languages do you need? (en, es) > enter o add several languages 
+🚀 Are you working with server side rendering? > in this case no
+
+this will create the files on assets/i18n => en.json and es.json
+
+Similar to ngx-translate, we need to create on this files key/values to access later. 
+
+2. Add provides app.config.ts
 
 ```js
-            "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
-            ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+import { ApplicationConfig, isDevMode } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+import { provideTransloco } from '@ngneat/transloco';
+
+import { TranslocoHttpLoader } from './transloco-loader';
+
+export const appConfig: ApplicationConfig = {
+    providers: [
+        provideHttpClient(),
+        provideTransloco({
+            config: {
+                availableLangs: ['en', 'es'],
+                defaultLang: 'en',
+                // Remove this option if your application doesn't support changing language in runtime.
+                reRenderOnLangChange: true,
+                prodMode: !isDevMode(),
+            },
+            loader: TranslocoHttpLoader
+        })
+    ]
+};
+
+```
+
+3. Replace each text with the keys and add transloco pipe. Example: 
+
+```html
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Spanish</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
 ```
 
 
+```html
+          <ul class="dropdown-menu">
+            <li><span class="dropdown-item" href="#" >{{'navbar.menu.languages.English' | transloco}}</span></li>
+            <li><span class="dropdown-item" href="#" >{{'navbar.menu.languages.Spanish' | transloco}}</span></li>
+          </ul>
+```
 
+4. Add some method to change the value of language, in this case y use a dropdown of navbar menu
+
+```html
+          <ul class="dropdown-menu">
+            <li><span class="dropdown-item" href="#" (click)="changeLanguage('en')">{{'navbar.menu.languages.English' | transloco}}</span></li>
+            <li><span class="dropdown-item" href="#" (click)="changeLanguage('es')">{{'navbar.menu.languages.Spanish' | transloco}}</span></li>
+          </ul>
+
+```
+5. Add TranslocoModule on each component that use transloco pipe
 
 <hr>
 
