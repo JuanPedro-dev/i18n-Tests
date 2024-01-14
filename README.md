@@ -16,15 +16,17 @@ npm install @popperjs/core
 Agregar las rutas en angular.json: 
 
 ```js
-"style":[
-    "node_modules/bootstrap/dist/css/bootstrap.min.css",
-    ...
-],
-"scripts":[
-    "node_modules/bootstrap/dist/js/bootstrap.min.js",
-    
-]
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
 ```
+
+
+
 
 <hr>
 
