@@ -1,6 +1,32 @@
-# I18n
+# I18n POC
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+This project is to analyze different implementations of I18n. <br>
+I will create a branch for each test. <br>
+To speed up the process I will make use of libraries such as bootstrap.
+
+
+## Extra Dependencies:  
+
+- Bootstrap: 
+
+```
+npm install bootstrap
+npm install @popperjs/core
+```
+Agregar las rutas en angular.json: 
+
+```js
+"style":[
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+    ...
+],
+"scripts":[
+    "node_modules/bootstrap/dist/js/bootstrap.min.js",
+    
+]
+```
+
+<hr>
 
 ## Development server
 
